@@ -3,7 +3,9 @@ Supervised learning for binary classification using Logistic regression
 
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 
-## Introduction to dataset 
+<img src='img/titanic.jpg'/>
+
+## Introduction to dataset
 
 ## Statistical analysis
 
