@@ -7,6 +7,34 @@
 import numpy as np
 import matplotlib.pyplot as plt
 
+'''
+# The function below is only presented as a reference, the pandas pd.read_csv() function can streamline all of the following process
+    def import_and_chk_consistency(filepath):
+        with open(filepath, newline='') as csvfile:
+            data_vector = []
+            data_reader = csv.reader(csvfile, delimiter=',', quotechar='"')
+            header = next(data_reader)
+            header_len = len(header)
+            print(f"Header for {filepath} data is {header}")
+            for row in data_reader:
+                if len(row) != header_len:
+                    print("Line count does not match. Skipping row.")
+                    continue
+                data_vector.append(row)
+
+            return (header, np.array(data_vector))
+    train, test, result = import_and_chk_consistency('data/train.csv'), import_and_chk_consistency('data/test.csv'),  import_and_chk_consistency('data/gender_submission.csv')
+    train_data, train_data_hdr = train[1], train[0]
+    test_data, test_data_hdr = test[1], test[0]
+    result_data_example, result_data_example_hdr = result[1], result[0]
+
+    train_data = pd.DataFrame(data=train_data, columns=train_data_hdr)
+    train_data = train_data.set_index('PassengerId')
+    test_data = pd.DataFrame(data=test_data, columns=test_data_hdr)
+    test_data = test_data.set_index('PassengerId')
+    result_data_example = pd.DataFrame(data=result_data_example, columns=result_data_example_hdr)
+'''
+
 def sigmoid(z):
     ''' g(z) sigmoid '''
     return 1 / (1+np.exp(-z))
