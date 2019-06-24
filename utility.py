@@ -37,8 +37,6 @@ import matplotlib.pyplot as plt
 
 def sigmoid(z):
     ''' g(z) sigmoid '''
-    if z < 0:
-        return (np.exp(z))/(1+np.exp(z))
     return 1 / (1+np.exp(-z))
 
 def y_pred(X_feat, theta_vector):
