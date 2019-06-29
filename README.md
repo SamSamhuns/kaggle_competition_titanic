@@ -24,14 +24,29 @@ Percent of Null Values           |  Number of Unique Values
 ![](img/stats/percent_null.png)  |  ![](img/stats/num_non_null.png)
 
     We drop the rows with NaN values for the Embarked and the Fare column in the training dataset as they only have 0.15% and 0.07% of missing values.
-    We drop the Cabin column completely as it has 77.5% of values missing and it does not make sense to impute this proportion of missing values.
-    (We could use a isCabinPresent boolean variable but we don't to limit the number of features)
+    (This only amounts to 3 observations/rows)
+
+    The Cabin column has 77.5% of values missing and it does not make sense to impute this proportion of missing values. So, we create another column `hasCabin` to flag whether a passenger has a cabin assigned to them.
+
     The NaN values in the Age column are filled with imputed values.
     These imputed values are the age values randomly selected within one std dev of the mean of the age of the respective ticket class and sex from the tables given below.
 
 Mean of Age segmented by Passenger Class and Sex  |  Std Dev of Age segmented by Passenger Class and Sex
 :-------------------------------:|:----------------------:
 ![](img/stats/mean_of_age_by_pclass_sex.png)  |  ![](img/stats/std_of_age_by_pclass_sex.png)  |
+
+__The training dataset after cleaning and normalization.__
+<img src='img/result/X_feat.png' />
+   * The categorical features `Sex` and `Embarked` have been converted into columns with numerical features. For `Sex`, males are represented by 0 and females by 1. `Embarked` has been converted to `Port`, where 0, 1 and 2 mean ports S, C and Q respectively. (Note: creating two columns isMale and isFemale is incorrect as it leads to two features with high correlation and the `dummy variable trap`)
+   * `Title` is engineered from the names of the passengers. i.e. Mr, Mrs, Master and Miss would represent 0, 1, 2, and 3 respectively.
+   * `Deck` represents the section of the ship passengers with Cabin numbers were assigned to. Here, 8 would mean the passenger had no Cabin hence Deck assigned to them.
+
+__Correlation Matrix__
+<img src='img/stats/correl_features.png' />
+
+For our logistic regression and subsequent machine learning models, we drop the `hasCabin` and `Port(Embarked)` Features to limit overfitting.
+*   `hasCabin` has a high correlation between Deck, so `hasCabin` can be removed as `Deck` gives a more detailed level of information
+*   It is not clear how the port of embarkment would affect survivability so `Port(Embarked)` is dropped as well
 
 ## Statistical analysis
 
@@ -56,13 +71,9 @@ __Average fare of passengers by Sex and Class__
 
     Women in almost all Passenger Classes were paying on average a higher fare than men which also meant they had a higher chance of survival as Fare is positively correlated with survivability.
 
-## Logistic Regression results
+## Logistic Regression
 
     For our logistic regression we use a linear logistic model with no polynomial features.
-
-__The training dataset after cleaning and normalization.__
-<img src='img/result/X_feat.png' />
-   * Note that the categorical features `Sex` and `Embarked` have been converted into numerical features by the columns `isMale`, `isFemale`, `emS`, `emC` and `emQ`.
 
 __Loss curve after 200000 iterations with an alpha(learning rate) of 0.019 and lambda(regularization factor) of 0.012`__
 <img src='img/result/loss_overtime.png' />
