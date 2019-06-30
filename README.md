@@ -97,8 +97,8 @@ __Average fare of passengers by Sex and Class__
 
     For our logistic regression we use a linear logistic model with no polynomial features.
 
-__Loss curve after 200000 iterations with an alpha(learning rate) of 0.019 and lambda(regularization factor) of 0.012`__
-<img src='img/result/loss_overtime.png' />
+__Loss curve after 50000 iterations with an alpha(learning rate) of 0.019 and lambda(regularization factor) of 0.99__
+<img src='img/result/loss_overtime.png' width="50%"/>
 
 __Final loss and accuracy on test data__
 <img src='img/result/loss_accuracy_model.png' />
