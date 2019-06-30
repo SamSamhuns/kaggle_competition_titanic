@@ -6,11 +6,12 @@ Supervised learning for binary classification using Logistic regression
 <img src='img/titanic.jpg'/>
 
 ## Requirements and Installation
-The python `pip` package must be installed.
+
 - __For BSD based OS__, run  `source initiate_ml.sh` to set up a virtualenv, install required packages and run the jupyter notebook
 - The shell script contains the following commands:
 
 ```shell
+$ python -m pip install --upgrade pip
 $ pip install virtualenv
 $ python3 -m venv venv_ml
 $ source venv_ml/bin/activate
