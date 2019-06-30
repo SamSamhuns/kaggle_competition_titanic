@@ -7,6 +7,8 @@ Supervised learning for binary classification using Logistic regression
 
 ## Requirements and Installation
 
+Python3 must be installed on the system and added to the system path.
+
 - __For BSD based OS__, run  `source initiate_ml.sh` to set up a virtualenv, install required packages and run the jupyter notebook
 - The shell script contains the following commands:
 
