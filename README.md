@@ -70,7 +70,7 @@ For our logistic regression and subsequent machine learning models, we drop the 
 *   `hasCabin` has a high correlation between Deck, so `hasCabin` can be removed as `Deck` gives a more detailed level of information
 *   It is not clear how the port of embarkment would affect survivability so `Port(Embarked)` is dropped as well
 
-## Statistical analysis
+## Exploratory Data analysis
 
 General statistics for the entire dataset (train and test)  |  Correlation Matrix of numerical columns in test dataset
 :-------------------------------:|:----------------------:
