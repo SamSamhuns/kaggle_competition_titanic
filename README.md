@@ -1,7 +1,6 @@
 # <a href='https://www.kaggle.com/c/titanic/overview'>kaggle_competition_titanic </a>
 Supervised learning for binary classification using Logistic regression
 
-[![Build Status](https://travis-ci.com/SamSamhuns/kaggle_competition_titanic.svg?token=Z5sqtVdygQce8gKWkdrq&branch=master)](https://travis-ci.com/SamSamhuns/kaggle_competition_titanic)
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 
 <img src='img/titanic.jpg'/>
