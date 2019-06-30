@@ -65,5 +65,9 @@ target/
 # Repo scratch directory
 scratch/
 
+# Virtualenv files
+venv*
+
 # Misc
 .DS_Store
+src/utility_cython.c
