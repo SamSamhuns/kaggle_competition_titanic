@@ -5,6 +5,25 @@ Supervised learning for binary classification using Logistic regression
 
 <img src='img/titanic.jpg'/>
 
+## Requirements and Installation
+The python `pip` package must be installed.
+- __For BSD based OS__, run  `source initiate_ml.sh` to set up a virtualenv, install required packages and run the jupyter notebook
+- The shell script contains the following commands:
+
+```shell
+$ pip install virtualenv
+$ python3 -m venv venv_ml
+$ source venv_ml/bin/activate
+$ pip install -r requirements.txt
+$ python setup.py build_ext --inplace
+$ ipython kernel install --user --name=titanic_ml_kernel
+$ jupyter notebook titanic_survival_logistic_regr.ipynb
+```
+
+-   __For Windows__, set up a conda virtualenv and install the requirements file using `conda install --file requirements.txt` from inside the conda virtualenv.
+
+-   __Important__: Make sure to change the current kernel to `titanic_ml_kernel` once inside the jupyter notebook window.
+
 ## Introduction to dataset
 
 __Training dataset__
