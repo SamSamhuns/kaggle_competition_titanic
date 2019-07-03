@@ -6,11 +6,14 @@ Supervised learning for binary classification using Logistic regression
 <img src='img/titanic.jpg'/>
 
 ## Requirements and Installation
-The python `pip` package must be installed.
+
+Python3 must be installed on the system and added to the system path.
+
 - __For BSD based OS__, run  `source initiate_ml.sh` to set up a virtualenv, install required packages and run the jupyter notebook
 - The shell script contains the following commands:
 
 ```shell
+$ python -m pip install --upgrade pip
 $ pip install virtualenv
 $ python3 -m venv venv_ml
 $ source venv_ml/bin/activate
@@ -66,7 +69,7 @@ For our logistic regression and subsequent machine learning models, we drop the 
 *   `hasCabin` has a high correlation between Deck, so `hasCabin` can be removed as `Deck` gives a more detailed level of information
 *   It is not clear how the port of embarkment would affect survivability so `Port(Embarked)` is dropped as well
 
-## Statistical analysis
+## Exploratory Data analysis
 
 General statistics for the entire dataset (train and test)  |  Correlation Matrix of numerical columns in test dataset
 :-------------------------------:|:----------------------:
@@ -93,8 +96,8 @@ __Average fare of passengers by Sex and Class__
 
     For our logistic regression we use a linear logistic model with no polynomial features.
 
-__Loss curve after 200000 iterations with an alpha(learning rate) of 0.019 and lambda(regularization factor) of 0.012`__
-<img src='img/result/loss_overtime.png' />
+__Loss curve after 50000 iterations with an alpha(learning rate) of 0.019 and lambda(regularization factor) of 0.99__
+<img src='img/result/loss_overtime.png' width="50%"/>
 
 __Final loss and accuracy on test data__
 <img src='img/result/loss_accuracy_model.png' />
