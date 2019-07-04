@@ -119,16 +119,13 @@ def plot_loss_and_fit(X_feat, y_target, logistic_model):
     plt.show()
 
 def logistic_accuracy(predicted_labels, actual_labels):
-    ''' function to calculate the accuracy of my model'''
-    count = 0
-    for i in range(len(actual_labels)):
-        if predicted_labels[i] == actual_labels[i]:
-            count += 1
-    return count/(len(actual_labels))
+    ''' function to calculate the accuracy of the model'''
+    correct = (predicted_labels == actual_labels).astype(int)
+    return correct.sum()/(len(actual_labels))
 
-def print_accuracy_best_git_parameters(X_feat, y_target, regr_model):
+def print_accuracy_best_get_parameters(X_feat, y_target, regr_model):
     ''' function to print the accuracy and the parameters of the logistic model'''
     pred = y_pred(X_feat, regr_model.theta_vector)
-    pred = [1 if x >= .5 else 0 for x in pred]
+    pred = np.array([1 if x >= .5 else 0 for x in pred]).reshape(-1,1)
     parameters = regr_model.theta_vector.reshape(1,regr_model.theta_vector.shape[0])
     print(f"Parameterx for the model = {parameters}, \nloss = {np.asscalar(regr_model.loss[-1])}, \naccuracy = {logistic_accuracy(pred, y_target)}")
