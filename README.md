@@ -13,7 +13,7 @@ Python3 must be installed on the system and added to the system path.
 ```shell
 $ python -m pip install --upgrade pip
 $ pip install virtualenv
-$ python3 -m venv venv_ml
+$ virtualenv venv_ml
 $ source venv_ml/bin/activate
 $ pip install -r requirements.txt
 $ ipython kernel install --user --name=titanic_ml_kernel
